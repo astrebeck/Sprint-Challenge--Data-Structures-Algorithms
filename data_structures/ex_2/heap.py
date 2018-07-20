@@ -1,19 +1,25 @@
 def heapsort(arr):
-  stop = 0
+  
+  new_heap = Heap()
+  output = []
 
-  while(not stop):
-    stop = 1
-    for i in range(len(arr)-1):
-      if(arr[i] > arr[i+1]):
+  for each in arr:
+    new_heap.insert(each)
+  
+  while(new_heap.size > 0):
 
-        temp = arr[i]
-        arr[i] = arr[i+1]
-        arr[i+1] = temp
-        stop = 0
+    for i in range(new_heap.size):
 
-      else: i += 1
+      new_heap._bubble_up(i)
 
-  return arr
+    output.append(new_heap.get_max())
+    new_heap.delete()
+
+  return output[::-1]
+
+
+  
+
 
 
 
