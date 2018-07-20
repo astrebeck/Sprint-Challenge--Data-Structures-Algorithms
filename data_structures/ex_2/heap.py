@@ -1,5 +1,21 @@
 def heapsort(arr):
-  pass
+  stop = 0
+
+  while(not stop):
+    stop = 1
+    for i in range(len(arr)-1):
+      if(arr[i] > arr[i+1]):
+
+        temp = arr[i]
+        arr[i] = arr[i+1]
+        arr[i+1] = temp
+        stop = 0
+
+      else: i += 1
+
+  return arr
+
+
 
 class Heap:
   def __init__(self):
